@@ -1,0 +1,10 @@
+№1:
+SN: 0TQZHB9CNT0BH7
+WiFi: ...EFC8FC
+
+№2
+SN: 0TQZJAVCNT1BKU
+WiFi: ...61E833
+
+# Моргает красным - нужна зарядка
+# 
