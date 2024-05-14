@@ -1,0 +1,11 @@
+robot_group.takeoff().wait_for_completed() # взлет
+code = ('''
+robot_group.up(120).wait_for_completed()
+robot_group.curve(x1=0, y1=50, z1=75, x2=0, y2=0, z2=100, speed=40).wait_for_completed()
+robot_group.curve(x1=0, y1=-50, z1=-25, x2=0, y2=0, z2=-50, speed=40).wait_for_completed()
+robot_group.curve(x1=0, y1=50, z1=-25, x2=0, y2=0, z2=-50, speed=40).wait_for_completed()
+robot_group.curve(x1=0, y1=-50, z1=50, x2=0, y2=0, z2=100, speed=40).wait_for_completed()
+''') # запись рекурсивной задачи
+file.seek(0)
+file.truncate()
+file.write(code)

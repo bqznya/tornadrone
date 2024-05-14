@@ -30,7 +30,7 @@ def send_request(message):
         messages=chat_history
     )
     except Exception as err:
-        print("Все провайдеры не отвечают, попробуйте пойзже")
+        print("Все провайдеры не отвечают, попробуйте позже")
     print(response)
     chat_history[0]["content"] += response + " "
     return response

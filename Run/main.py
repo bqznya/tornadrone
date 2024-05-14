@@ -2,7 +2,6 @@ from multi_robomaster import multi_robot
 import time
 
 
-
 def base_action_1(robot_group):
     with open('task1.txt', mode='r+',encoding='utf-8') as file:
         while True:

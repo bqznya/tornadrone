@@ -1,4 +1,8 @@
 from djitellopy import TelloSwarm
+from djitellopy import tello
+import subprocess
+process = subprocess.Popen(["python", "bot.py"])
+import cv2
 
 
 def drunk_logic(i, tello):
@@ -11,9 +15,7 @@ def drunk_logic(i, tello):
                     code = ("""
                     tello.forward(30)
                     tello.rotate(90)
-                    file.seek(0)
-                    file.truncate()
-                    file.write(code)""")
+                    """)
                     file.seek(0)
                     file.truncate()
                     file.write(code)
@@ -31,9 +33,7 @@ def drunk_logic(i, tello):
                     code = ("""
                     tello.forward(30)
                     tello.rotate(-90)
-                    file.seek(0)
-                    file.truncate()
-                    file.write(code)""")
+                    """)
                     file.seek(0)
                     file.truncate()
                     file.write(code)
@@ -53,6 +53,9 @@ swarm = TelloSwarm.fromIps([
 swarm.connect()
 for tello in swarm:
     print(tello.get_battery())
+    keepRecording = True
+    tello.streamon()
+    frame_read = tello.get_frame_read()
 swarm.takeoff()
 swarm.parallel(drunk_logic)
 # tl_flight.curve(x1=-50, y1=0, z1=70, x2=-400, y2=0, z2=55, speed=40).wait_for_completed() # y
